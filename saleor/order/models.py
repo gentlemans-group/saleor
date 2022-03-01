@@ -262,7 +262,7 @@ class Order(ModelWithMetadata):
     objects = models.Manager.from_queryset(OrderQueryset)()
 
     class Meta:
-        ordering = ("-pk",)
+        ordering = ("-number",)
         permissions = ((OrderPermissions.MANAGE_ORDERS.codename, "Manage orders."),)
         indexes = [
             *ModelWithMetadata.Meta.indexes,
